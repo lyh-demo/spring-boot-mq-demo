@@ -1,0 +1,9 @@
+rocketmq:
+  name-server: localhost:9876
+  consumer:
+    topic: my-test-topic
+    group: my-consumer-group
+  producer:
+    group: my-producer-group
+server:
+  port: 9000
