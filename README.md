@@ -91,3 +91,17 @@ docker run -d --hostname my-rabbit -p 5672:5672 -p 5671:5671 -p 15671:15671 -p 1
 ```
 
 ## Kafka
+
+[使用 Docker 运行 Kafka](https://kafka.apache.org/quickstart)
+
+1、拉取镜像
+
+```bash
+docker pull apache/kafka:4.0.0
+```
+
+2、运行
+
+```bash
+docker run -d --name kafka -p 9092:9092 apache/kafka:4.0.0
+```
