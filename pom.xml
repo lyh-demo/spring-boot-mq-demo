@@ -11,6 +11,7 @@
     <modules>
         <module>activemq-demo</module>
         <module>rocketmq-demo</module>
+        <module>rabbitmq-demo</module>
     </modules>
 
     <properties>

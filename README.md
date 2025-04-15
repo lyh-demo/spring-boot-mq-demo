@@ -9,12 +9,11 @@ docker pull webcenter/activemq:latest
 docker run --name='activemq' -it --rm -P webcenter/activemq:latest
 ```
 
-The account admin is "admin" and password is "admin". 
+The account admin is "admin" and password is "admin".
 
 All settings are the default ActiveMQ's settings.
 
 Web Console on ActiveMQ: [http://localhost:32770/admin/index.jsp](http://localhost:32770/admin/index.jsp)
-
 
 ## RocketMQ
 
@@ -45,6 +44,7 @@ docker run -d --name rmqnamesrv -p 9876:9876 --network rocketmq apache/rocketmq:
 # 验证 NameServer 是否启动成功
 docker logs -f rmqnamesrv
 ```
+
 > 我们可以看到 'The Name Server boot success..'， 表示NameServer 已成功启动。
 
 4、启动 Broker + Proxy
@@ -75,5 +75,19 @@ docker exec -it rmqbroker bash -c "tail -n 10 /home/rocketmq/logs/rocketmqlogs/p
 至此，一个单节点副本的 RocketMQ 集群已经部署起来了，我们可以利用脚本进行简单的消息收发。
 
 ## RabbitMQ
+
+[使用 Docker 运行 RabbitMQ](https://hub.docker.com/_/rabbitmq)
+
+1、拉取镜像
+
+```bash
+docker pull rabbitmq:4.0.9-management
+```
+
+2、运行
+
+```bash
+docker run -d --hostname my-rabbit -p 5672:5672 -p 5671:5671 -p 15671:15671 -p 15672:15672 --name some-rabbit rabbitmq:4.0.9-management
+```
 
 ## Kafka
